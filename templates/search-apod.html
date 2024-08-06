@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles-for-search-apod.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="main" class="main">
+    <h1>Search by date</h1>
+
+    <form action="#" method="post">
+        <p><input class="date-form" type="date" name="date" required></p>
+        <p><input class="submit-form" type="submit" value="submit"></p>
+    </form>
+
+    <div class="divider"></div>
+
+    <h2>Or choose from images</h2>
+    <div class="img-grid">
+        {% for image in respond %}
+        <a href="/apod/{{ image['date'] }}" class="apod-images">
+            {% if image["media_type"] == "image" %}
+            <img class="img" src="{{ image['src'] }}" alt="{{ image['title'] }}" />
+            {% else %}
+            <iframe src="{{ image['src'] }}"></iframe>
+            {% endif %}
+            <p class="img-date">{{ image["date"] }}</p>
+            <p class="img-title">{{ image["title"] }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

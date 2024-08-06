@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<section id="main" class="main">
+  <h1>Astronomy Picture of the Day</h1>
+  <h2>{{ title }}</h2>
+  <div class="img-data">
+    <div class="img-credit">
+      {% if media_type == "image" %}
+      <img class="img" src="{{ src }}" alt="{{ title }}, See Explanation.">
+      {% else %}
+      <iframe src="{{ src }}"></iframe>
+      {% endif %}
+      <p class="credit">Credit & Copyright: {{ copyright }}</p>
+      <p class="date">{{ date }}</p>
+    </div>
+    <div class="divider"></div>
+    <div class="explanation">
+      {% for line in explanation %}
+      <p>{{ line }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

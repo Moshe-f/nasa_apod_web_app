@@ -1,0 +1,91 @@
+form {
+  text-align: center;
+}
+
+.date-form,
+.submit-form {
+  font-size: 3.3rem;
+  border-radius: 15px;
+  padding: 3px;
+  background: #00000033;
+  border: black solid 1px;
+  margin: 4vh;
+  padding-left: 9px;
+}
+
+.submit-form {
+  margin-top: 0;
+  border: unset;
+  background: unset;
+  margin-bottom: 0;
+  padding: 9px;
+}
+
+.submit-form:hover {
+  cursor: pointer;
+  background: #00000033;
+}
+
+/* "Auto magic" image grid using no media queries */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 88%;
+  margin: auto;
+  padding: 5rem;
+  justify-content: center;
+}
+
+@media (max-width: 30.625em) {
+  .img-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.apod-images {
+  background: #00000033;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.apod-images:hover {
+  color: rgb(209, 250, 255);
+  transition: transform 0.4s ease-out;
+  transform: scale(1.1);
+}
+
+.img {
+  height: 65%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.img-date {
+  padding-top: 10px;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 2rem;
+}
+
+.img-title {
+  font-size: 2.5rem;
+  padding: 4rem 1rem;
+}
+
+@media (max-width: 500px) {
+  .img-date {
+    font-size: 1rem;
+    padding-top: unset;
+  }
+  
+  .img-title {
+    font-size: 1.5rem;
+    padding-top: unset;
+    margin-bottom: 10%;
+    overflow: hidden;
+  }
+}

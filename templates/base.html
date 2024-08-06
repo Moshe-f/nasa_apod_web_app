@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images from NASA API</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <nav id="navbar" class="nav">
+    <ul class="nav-list">
+      <li>
+        <a class="header" href="/">Space photos</a>
+      </li>
+      <li>
+        <a href="/search-apod">Search date</a>
+      </li>
+      <li>
+        <a href="/">Astronomy Picture of the Day</a>
+      </li>
+    </ul>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <p>
+      This site uses <a href="https://api.nasa.gov/" target="_blank">NASA API</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
